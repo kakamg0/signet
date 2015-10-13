@@ -756,6 +756,7 @@ module Signet
       # @param [String] new_issued_at
       #    The access token issuance time.
       def issued_at=(new_issued_at)
+        new_issued_at = Time.parse(new_issued_at) if new_issued_at.is_a?(String)
         @issued_at = new_issued_at
       end
 
